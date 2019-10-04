@@ -3,7 +3,11 @@ const resourcesToPrecache = [
   "/",
   "index.html",
   "styles/main.css",
-  "images/sample.jpg"
+  "scripts/main.js",
+  "images/sample.jpg",
+  "images/icon-192x192.png",
+  "images/icon-512x512.png",
+  "images/apple-touch-icon.png"
 ];
 
 self.addEventListener("install", event => {
@@ -22,6 +26,7 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   console.log("fetch intercepted for: ", event.request.url);
   event.respondWith(
+    // caches.match(event.request) || fetch(event.request);
     caches.match(event.request).then(cachedResponse => {
       return cachedResponse || fetch(event.request);
     })
