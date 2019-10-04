@@ -6,3 +6,18 @@ h1 {
   text-align: center;
   color: white;
 }
+
+button {
+  margin: 0 auto;
+}
+
+@media all and (display-mode: standalone) {
+  body {
+    background-color: orange;
+  }
+}
+
+/*
+or with javascript:
+window.matchMedia('(display-mode: standalone)');
+*/
