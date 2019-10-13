@@ -18,6 +18,7 @@ if ("serviceWorker" in navigator && "PushManager" in window) {
   // if ("serviceWorker" in navigator) {
   console.log("Service Worker and Push is supported");
 
+  // use the window load event to build the cache *after* first render
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("../sw.js")
