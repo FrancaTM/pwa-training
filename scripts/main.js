@@ -2,7 +2,7 @@
 
 const pushButton = document.querySelector(".js-push-btn");
 
-let debugMode = false;
+let debugMode = true;
 debugMode
   ? console.log("debugMode ON - main.js")
   : console.log("debugMode OFF - main.js");
@@ -14,9 +14,9 @@ debugMode
 //   return;
 // }
 
-// if ("serviceWorker" in navigator && "PushManager" in window) {
-if ("serviceWorker" in navigator) {
-  // console.log("Service Worker and Push is supported");
+if ("serviceWorker" in navigator && "PushManager" in window) {
+  // if ("serviceWorker" in navigator) {
+  console.log("Service Worker and Push is supported");
 
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -50,7 +50,7 @@ if ("serviceWorker" in navigator) {
 // const applicationServerPublicKey =
 //   "BKbg5h6OxdQc1KK2uHXzsW04n-A6LvZwdw2iGR_YH_jig4WNzaL5RjXBLeKU7R0KHOAtzP_eRPHJmGmnaoVWHgk";
 const applicationServerPublicKey =
-  "BCx-z23vnIudhPErRd6j77KV5CGDggZhaafnfxEpwAoVfoJgYVQAnZfme1UpquJrR1Y02pGn5kQKP08IkDQzqfk";
+  "BJ-SUI0noPkGw4_QRyfqBAQY49H8pxxTTQIG8LUUnE7gosQ-drUbBaGSCUyPQZe0wxp1ZF0TPIyki6_mBeAnyfY";
 
 let isSubscribed = false;
 let swRegistration = null;

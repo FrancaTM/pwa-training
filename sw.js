@@ -1,7 +1,7 @@
 "use strict";
 
 // CACHE_NAME
-const cacheName = "cache-v1";
+const CACHE_NAME = "cache-v1";
 // urlsToCache
 const resourcesToPrecache = [
   "/",
@@ -27,7 +27,7 @@ self.addEventListener("install", event => {
   self.skipWaiting();
 
   event.waitUntil(
-    caches.open(cacheName).then(cache => {
+    caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(resourcesToPrecache);
     })
   );
@@ -47,24 +47,32 @@ self.addEventListener("fetch", event => {
   );
 });
 
-self.addEventListener("push", event => {
+self.addEventListener("push", function(event) {
+  let pushMessage = "just a simple push message";
   console.log("[Service Worker] Push received");
-  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+
+  if (event.data != null) {
+    pushMessage = event.data.text();
+    console.log(`[Service Worker] Push had this data: "${pushMessage}"`);
+  }
 
   const title = "Push Codelab";
-  const options = {
-    body: "yay it works",
-    icon: "images/smiley.svg",
-    badge: "images/sample.png"
-  };
-  // const body = "a body message";
-  // const icon = "/images/smiley.svg";
-  // const tag = "simple-push-example-tag";
+  // const options = {
+  //   body: "yay it works",
+  //   icon: "images/smiley.svg",
+  // badge: "images/sample.png";
+  // };
+  const body = pushMessage;
+  const icon = "images/sample.png";
+  const tag = "simple-push-example-tag";
+  const badge = "images/smiley.svg";
 
-  const notificationPromise = self.registration.showNotification(
-    title,
-    options
-  );
+  const notificationPromise = self.registration.showNotification(title, {
+    body: body,
+    icon: icon,
+    badge: badge,
+    tag: tag
+  });
   event.waitUntil(notificationPromise);
 });
 
