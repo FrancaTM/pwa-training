@@ -1,14 +1,88 @@
+html {
+  height: 100%;
+}
+
+html,
 body {
-  background-color: purple;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  /* background-color: purple; */
+}
+
+body {
+  min-height: auto;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  justify-content: space-between;
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  padding: 115px 0 32px 0;
+  background-color: #00bcd4;
+  color: white;
+}
+
+main,
+header > h1 {
+  padding: 0 16px;
+  max-width: 760px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+main {
+  margin: 24px auto;
+  box-sizing: border-box;
 }
 
 h1 {
   text-align: center;
-  color: white;
+  /* color: white; */
 }
 
 button {
   margin: 0 auto;
+  /* margin-left: auto;
+  margin-right: auto;
+  display: block; */
+}
+
+img {
+  width: 40%;
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+pre {
+  white-space: pre-wrap;
+  background-color: #eeeeee;
+  padding: 16px;
+}
+
+pre code {
+  word-break: break-word;
+}
+
+.is-invisible {
+  opacity: 0;
+}
+
+.subscription-details {
+  transition: opacity 1s;
+}
+
+@media (max-width: 600px) {
+  header > h1 {
+    font-size: 36px;
+  }
 }
 
 @media all and (display-mode: standalone) {
