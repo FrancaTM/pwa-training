@@ -51,7 +51,7 @@ if ("serviceWorker" in navigator && "PushManager" in window) {
 // const applicationServerPublicKey =
 //   "BKbg5h6OxdQc1KK2uHXzsW04n-A6LvZwdw2iGR_YH_jig4WNzaL5RjXBLeKU7R0KHOAtzP_eRPHJmGmnaoVWHgk";
 const applicationServerPublicKey =
-  "BJ-SUI0noPkGw4_QRyfqBAQY49H8pxxTTQIG8LUUnE7gosQ-drUbBaGSCUyPQZe0wxp1ZF0TPIyki6_mBeAnyfY";
+  "BCx-z23vnIudhPErRd6j77KV5CGDggZhaafnfxEpwAoVfoJgYVQAnZfme1UpquJrR1Y02pGn5kQKP08IkDQzqfk";
 
 let isSubscribed = false;
 let swRegistration = null;
